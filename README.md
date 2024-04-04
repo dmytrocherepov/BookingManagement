@@ -1,4 +1,4 @@
-# <h1 align="center">Online Book Store</h1>
+# <h1 align="center">Book Management Service</h1>
 
 The primary objective of the Booking management is to provide an efficient and user-friendly platform for managing books. This platform allows customers to post , update , delete and get books.
 
