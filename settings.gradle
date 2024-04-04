@@ -1,0 +1,5 @@
+rootProject.name = 'booking-grpc'
+include 'proto'
+include 'grpc-client'
+include 'grpc-server'
+

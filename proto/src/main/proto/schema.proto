@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.bookstore.grpc";
+
+message Book {
+  string title = 1 ;
+  string author = 2;
+  string isbn = 3;
+  int32 quantity = 4;
+}
+
+message BookWithId {
+  string id = 1;
+  string title = 2;
+  string author = 3;
+  string isbn = 4;
+  int32 quantity = 5;
+}
+
+
+message CreateBookRequest {
+  Book book = 1;
+}
+
+message GetBookRequest {
+  string id = 1;
+}
+
+message UpdateBookRequest {
+  BookWithId book = 1;
+}
+
+message DeleteBookRequest {
+  string id = 1;
+}
+
+message FindAllResponse {
+  repeated BookWithId book = 1;
+}
+
+
+service BookService {
+  rpc createBook(CreateBookRequest) returns (BookWithId);
+  rpc getBook(GetBookRequest) returns (BookWithId);
+  rpc updateBook(UpdateBookRequest) returns (BookWithId);
+  rpc deleteBook(DeleteBookRequest) returns (BookWithId);
+}
